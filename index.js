@@ -25,7 +25,7 @@ app.use(bodyParser.json());
   useUnifiedTopology: true
 },()=> console.log('Successfully connected to local database'));*/
 
-mongoose.connect("mongodb+srv://admin-process.env.adminUsername:process.env.adminPassword@myfirstdatabase.ewcnv.mongodb.net/reservationDB",
+mongoose.connect(process.env.MONGODB_URI,
 {useNewUrlParser:true,
 useUnifiedTopology:true},
 ()=> console.log('Successfully connected to cloud database'));
