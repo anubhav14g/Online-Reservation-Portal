@@ -25,7 +25,7 @@ app.use(bodyParser.json());
   useUnifiedTopology: true
 },()=> console.log('Successfully connected to local database'));*/
 
-const uri=process.env.MONGODB_URI;
+const uri=process.env.MONGODB_URI.toString();
 mongoose.connect(uri,
 {useNewUrlParser:true,
 useUnifiedTopology:true},
