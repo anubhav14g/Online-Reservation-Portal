@@ -25,7 +25,7 @@ app.use(bodyParser.json());
   useUnifiedTopology: true
 },()=> console.log('Successfully connected to local database'));*/
 
-mongoose.connect("mongodb+srv://admin-anubhavg:T-0101@myfirstdatabase.ewcnv.mongodb.net/reservationDB",
+mongoose.connect(process.env.MONGODB_URI,
 {useNewUrlParser:true,
 useUnifiedTopology:true},
 ()=> console.log('Successfully connected to cloud database'));
@@ -42,7 +42,7 @@ app.use(express.static( __dirname + "/public"));
 // ejs
 
 app.use(require("express-session")({
-	secret: "ONLINERESERVATIONPORTAL",
+	secret: process.env.APP_SECRET,
 	resave: false,
 	saveUninitialized: false
 }));
